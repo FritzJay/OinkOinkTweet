@@ -1,0 +1,28 @@
+<div class="home">
+  <img src="../assets/images/Logo@x1.png" alt="A flying pig" />
+  <div class="search">
+    <button [ngClass]="{ active: isDBLoading }" (click)="onSearchClick()">
+      <img class="loading-icon" *ngIf="isDBLoading" src="../../assets/images/loading.gif" alt="loading" />
+      Past Searches
+    </button>
+    <name-list [names]="names"></name-list>
+  </div>
+
+  <h1>Welcome to OinkOinkTweet.</h1>
+  <p>
+    Ever thought to yourself, "I know what's missing in the world"? Well we did. <br/>
+    Use us to translate any tweet or message to Pig Latin. <br/>
+    eThay orldway ependsday onyay ityay.
+  </p>
+</div>
+<div class="form">
+  <input type="text" [(ngModel)]="twitterHandle" name="twitterHandle" placeholder="Enter Twitter Handle" />
+  <img src="../assets/images/Transfer @1x.png" alt="Transfer" />
+    <button [ngClass]="{ active: isTwitterLoading }" (click)="onTranslateClick()">
+      Translate
+      <img class="loading-icon" *ngIf="isTwitterLoading" src="../../assets/images/loading.gif" alt="loading" />
+    </button>
+</div>
+<div id="tweetlist"> <!-- Put tweet-list inside a div so ng2-page-scroll will have a target -->
+  <tweet-list [tweets]="tweets" [twitterHandle]="displayHandle" *ngIf="tweets"></tweet-list>
+</div>

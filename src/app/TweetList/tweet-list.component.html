@@ -1,0 +1,9 @@
+<div class="tweets" [@flyInOut]="twitterHandle">
+  <h1>{{twitterHandle}}'s Tweets</h1>
+
+  <ul class="tweets">
+    <li *ngFor="let tweet of tweets">
+      {{tweet.text}}
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,11 @@
+.name-list {
+  text-align: center;
+  font-size: 1em;
+}
+
+ul {
+  padding-left: 0;
+  list-style: none;
+  text-align: center;
+  line-height: 1.5em;
+}
