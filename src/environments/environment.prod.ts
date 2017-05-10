@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
   urls: [
-    'http://localhost:3000/twitter/',
+    'https://oinkoinktweetapi.herokuapp.com/twitter/',
     'http://localhost:3000/db/'
   ]
 };
