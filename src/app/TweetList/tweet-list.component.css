@@ -1,42 +1,43 @@
 
-div.tweets {
-  display: table;
-  padding: 10%;
-  margin: 0 auto;
-  font-family: Brush Script MT;
-  font-size: 1.25em;
-  letter-spacing: 0.2px;
-  background-image: url('../../assets/images/scroll.gif');
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: #33220D;
+.tweets{
+display:table;
+padding:10%;
+margin:0 auto;
+font-family:BrushScriptMT;
+font-size:1.25em;
+letter-spacing:0.2px;
+background-image:url('../../assets/images/scroll.gif');
+background-repeat:no-repeat;
+background-size:cover;
+color:#33220D;
 }
 
-h1 {
-  font-size: 2.65em;
-  text-align: center;
-  margin-bottom: 10px;
+h1{
+font-size:2.65em;
+text-align:center;
+margin-bottom:10px;
 }
 
-h1:first-letter {
-  text-transform: capitalize;
+h1:first-letter{
+text-transform:capitalize;
 }
 
-ul {
-  list-style: none;
-  align-items: center;
-  padding: 0;
+ul{
+list-style:none;
+align-items:center;
+padding:0;
 }
 
-li {
-  width: 95%;
-  margin: auto;
-  margin-bottom: 10px;
-  line-height: 1.25em;
-  font-size: 1.25em;
+li{
+width:95%;
+margin:auto;
+margin-bottom:10px;
+line-height:1.25em;
+font-size:1.25em;
 }
-li::first-letter {
-  color: #17355d;
-  font-size: 2.25em;
-  text-transform: capitalize;
+
+li::first-letter{
+color:#17355d;
+font-size:2.25em;
+text-transform:capitalize;
 }
