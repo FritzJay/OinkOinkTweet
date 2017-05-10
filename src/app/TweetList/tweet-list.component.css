@@ -1,5 +1,6 @@
 
 div.tweets{
+max-width:80%;
 display:table;
 padding:10%;
 margin:0 auto;
