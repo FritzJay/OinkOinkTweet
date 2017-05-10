@@ -1,9 +1,8 @@
 
 div.tweets{
-max-width:80%;
 display:table;
 padding:10%;
-margin:0 auto;
+margin:0 10%;
 font-family:BrushScriptMT;
 font-size:1.25em;
 letter-spacing:0.2px;
