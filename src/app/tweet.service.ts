@@ -2,7 +2,7 @@ import { Injectable, OnInit } from '@angular/core';
 import { Http, Response, Headers, RequestOptions, RequestMethod } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import { Tweet } from './Tweet';
-import { environment } from '../environments/environment';
+import { environment } from '../environments/environment.prod';
 
 @Injectable()
 export class TweetService {
@@ -11,8 +11,7 @@ export class TweetService {
   constructor(private http: Http) {}
 
   getNames(): Observable<string[]> {
-    // Get url needed to query db
-    let url = this.urls[1];
+    let url = this.urls['database'];
     // Create Headers
     let headers = new Headers({
       'Content-Type': 'text/plain'
@@ -41,7 +40,7 @@ export class TweetService {
 
   getTweets(twitterHandle: string): Observable<Tweet[]> {
     // Create url needed to query our server
-    let url = this.urls[0] + twitterHandle;
+    let url = this.urls.twitter + twitterHandle;
     // Create Headers
     let headers = new Headers({
       'Content-Type': 'text/plain'

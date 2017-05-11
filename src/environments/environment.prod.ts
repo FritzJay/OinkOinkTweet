@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
-  urls: [
-    'https://oinkoinktweet.herokuapp.com/twitter/',
-    'https://oinkoinktweet.herokuapp.com/db/'
-  ]
-};
+  urls: {
+    twitter: 'https://oinkoinktweet.herokuapp.com/twitter/',
+    database: 'https://oinkoinktweet.herokuapp.com/db/'
+  }
+}
