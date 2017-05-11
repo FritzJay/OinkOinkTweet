@@ -46,7 +46,7 @@ export class HomeComponent {
         },
         (error) => {
           this.isTwitterLoading = false;
-          console.log(<any>error)
+          console.log('Error in home.component.ts, onTranslateClick(): ' + <any>error)
         }
       );
   }
@@ -55,7 +55,7 @@ export class HomeComponent {
     if (this.names === undefined) {
       // If it hasn't been 5 seconds since last db query
       if (this.nextNamesLoad > Date.now()) {
-        // Use the in memore store of names
+        // Use the in memory store of names
         this.names = this.namesStore;
         return;
       }
@@ -72,7 +72,7 @@ export class HomeComponent {
         },
         (error) => {
           this.isDBLoading = false;
-          console.log(<any>error);
+          console.log('Error: in home.component.ts, onSearchClick(): ' + <any>error);
         }
       );
     } else {
