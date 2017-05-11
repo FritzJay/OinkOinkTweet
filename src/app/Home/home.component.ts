@@ -46,7 +46,8 @@ export class HomeComponent {
         },
         (error) => {
           this.isTwitterLoading = false;
-          console.log('Error in home.component.ts, onTranslateClick(): ' + <any>error)
+          console.log('Error in home.component.ts, onTranslateClick():')
+          console.log(<any>error)
         }
       );
   }
@@ -72,7 +73,8 @@ export class HomeComponent {
         },
         (error) => {
           this.isDBLoading = false;
-          console.log('Error: in home.component.ts, onSearchClick(): ' + <any>error);
+          console.log('Error: in home.component.ts, onSearchClick():')
+          console.log(<any>error);
         }
       );
     } else {

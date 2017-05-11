@@ -29,7 +29,8 @@ export class TweetService {
   }
 
   extractNames(res: Response) {
-    console.log('From extractNames-- Results: ' + res)
+    console.log('From extractNames-- Results:')
+    console.log(res)
     let names = [];
     for (let name of res.json()) {
       console.log('From extractNames--Name: ' + name.initcap)
@@ -62,6 +63,7 @@ export class TweetService {
   }
 
   handleError(err: Response | any) {
+    console.log('Error in handleError()--')
     console.log(err);
     return Observable.throw(err);
   }

@@ -12,12 +12,14 @@ app.get('/twitter/:twitterHandle', function (req, res) {
   // Get data back from request
   let callback = function (err, data) {
     if (err) {
-      console.error(err)
+      console.error('From app.get/twitter.callback()--')
+      console.log(err)
     } else {
       // Add name to list of searched names
       dbApi.addName([twitterHandle], function (err) {
         if (err) {
-          console.error(err)
+          console.error('From app.get/twitter.callback()')
+          console.log(err)
         } else {
           console.log('successfully added to db')
         }
@@ -47,7 +49,7 @@ app.get('/db/', function (req, res) {
   dbApi.getNames(function (err, result) {
     if (err) {
       console.error(err)
-      res.send('There was an error retrieving names from the database.')
+      res.send('From app.get/db-- There was an error retrieving names from the database.')
     } else {
       res.send(result)
     }
