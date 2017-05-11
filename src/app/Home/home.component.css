@@ -132,7 +132,7 @@ box-shadow:none;
 box-shadow:none;
 }
 
-.tweetlist {
+#tweetlist {
   display: flex;
   justify-content: center;
   align-content: center;
