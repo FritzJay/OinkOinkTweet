@@ -24,6 +24,19 @@ background-repeat:no-repeat;
 background-position:center;
 }
 
+.history-icon{
+display:block;
+position:absolute;
+top:0;
+right:0;
+bottom:0;
+left:0;
+background-image:url('../../assets/images/history-icon.png');
+background-size:contain;
+background-position:center;
+background-repeat: no-repeat;
+}
+
 .search{
 position:absolute;
 display:flex;
@@ -39,20 +52,6 @@ color: black;
 
 .search.active{
 background-color:white;
-}
-
-.history-icon{
-display:block;
-position:absolute;
-top:0;
-right:0;
-bottom:0;
-left:0;
-opacity:0.64;
-background-image:url('../../assets/images/history-icon.png');
-background-size:contain;
-background-position:center;
-background-repeat: no-repeat;
 }
 
 .search button{

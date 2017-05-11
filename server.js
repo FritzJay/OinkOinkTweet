@@ -1,5 +1,27 @@
 const express = require('express')
 const app = express()
+
+// Set things up for development
+const env = process.env.NODE_ENV
+if (env !== 'production') {
+  console.log('running in development mode')
+  // Get env variables
+  require('dotenv').config()
+  console.log('Env variables:')
+  console.log(process.env.user)
+  console.log(process.env.database)
+  console.log(process.env.password)
+  console.log(process.env.host)
+  console.log(process.env.port)
+
+  // Set to allow CORS
+  app.use(function (req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*')
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
+    next()
+  })
+}
+
 const twitterApi = require('./lib/twitter')
 const dbApi = require('./lib/database')
 
@@ -60,4 +82,7 @@ app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname, '/dist/index.html'))
 })
 
-app.listen(process.env.PORT || 8080)
+const port = (env === 'production') ? process.env.PORT || 3000 : 3000
+app.listen(port, function () {
+  console.log(`Api server now listening on ${port}`)
+})
