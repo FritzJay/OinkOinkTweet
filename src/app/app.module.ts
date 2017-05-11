@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AppComponent } from './app.component';
 import { HomeComponent } from './Home/home.component';
 import { TweetListComponent } from './TweetList/tweet-list.component';
 import { NameListComponent } from './NameList/name-list.component'
@@ -15,7 +14,6 @@ import { Ng2PageScrollModule  } from 'ng2-page-scroll';
 
 @NgModule({
   declarations: [
-    AppComponent,
     HomeComponent,
     TweetListComponent,
     NameListComponent
@@ -30,6 +28,6 @@ import { Ng2PageScrollModule  } from 'ng2-page-scroll';
   providers: [
     TweetService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [HomeComponent]
 })
 export class AppModule { }
