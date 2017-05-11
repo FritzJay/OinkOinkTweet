@@ -1,9 +1,9 @@
 <div class="home">
   <img src="../assets/images/Logo@x1.png" alt="A flying pig" />
-  <div class="search">
+  <div class="search" [class.active]="names !== undefined">
     <button [ngClass]="{ active: isDBLoading }" (click)="onSearchClick()">
-      <img class="loading-icon" *ngIf="isDBLoading" src="../../assets/images/loading.gif" alt="loading" />
-      Past Searches
+      <div [class.history-icon]="!isDBLoading"></div>
+      <div [class.loading-icon]="isDBLoading"></div>
     </button>
     <name-list [names]="names"></name-list>
   </div>

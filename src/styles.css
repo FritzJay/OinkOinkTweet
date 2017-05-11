@@ -14,3 +14,10 @@ p{
 letter-spacing:0.3px;
 line-height:1.25em;
 }
+
+my-home{
+  display:flex;
+  flex-flow:column;
+  justify-content:center;
+  align-content:center;
+}
