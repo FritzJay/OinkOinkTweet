@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
-    "start-dev": "concurrently --kill-others \"ng s --dev\" \"nodemon server.js\"",
+    "start-dev": "concurrently --kill-others \"ng serve --environment=dev\" \"nodemon server.js\"",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
