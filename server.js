@@ -1,16 +1,58 @@
 const express = require('express')
 const app = express()
+const twitterApi = require('./lib/twitter')
+const dbApi = require('./lib/db')
 
 var path = require('path')
 
-// Enable CORS
-app.use(function (req, res, next) {
-  res.header('Access-Control-Allow-Origin', '*')
-  res.header('Access-Controle-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
-  next()
+app.use(express.static(path.join(__dirname, '/dist')))
+
+// TWITTER
+app.get('/twitter/:twitterHandle', function (req, res) {
+  // Get data back from request
+  let callback = function (err, data) {
+    if (err) {
+      console.error(err)
+    } else {
+      // Add name to list of searched names
+      dbApi.addName([twitterHandle], function (err) {
+        if (err) {
+          console.error(err)
+        } else {
+          console.log('successfully added to db')
+        }
+      })
+    }
+
+    // Send results
+    if (data) {
+      res.send(data)
+    } else {
+      res.send({ text: 'No user was found' })
+    }
+  }
+  // If a twitterHandle exists
+  if (req.params.twitterHandle) {
+    var twitterHandle = req.params.twitterHandle.replace(/ /g, '_')
+    // Get last 3 tweets from twitterHandle
+    twitterApi.queryTwitter(twitterHandle, callback)
+  } else {
+    console.log('no handle')
+    res.send({})
+  }
 })
 
-app.use(express.static(path.join(__dirname, '/dist')))
+// DATABASE
+app.get('/db/', function (req, res) {
+  dbApi.getNames(function (err, result) {
+    if (err) {
+      console.error(err)
+      res.send('There was an error retrieving names from the database.')
+    } else {
+      res.send(result)
+    }
+  })
+})
 
 app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname, '/dist/index.html'))
