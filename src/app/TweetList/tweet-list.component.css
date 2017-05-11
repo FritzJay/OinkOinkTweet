@@ -39,3 +39,13 @@ li::first-letter{
 font-size:2.25em;
 text-transform:capitalize;
 }
+
+@media all and (max-width: 600px){
+  div.tweets{
+  padding:10%;
+  padding-top:35%;
+  padding-bottom:35%;
+  background-repeat:no-repeat;
+  background-size:cover;
+  }
+}
