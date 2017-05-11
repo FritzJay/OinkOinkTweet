@@ -30,11 +30,11 @@ export class TweetService {
 
   extractNames(res: Response) {
     console.log('From extractNames-- Results:')
-    console.log(res.json())
+    console.log(res)
     let names = [];
     for (let name of res.json()) {
-      console.log('From extractNames--Name: ' + name.initcap)
-      names.push(name.initcap);
+      console.log('From extractNames--Name: ' + name)
+      names.push(name);
     }
     return names;
   }
