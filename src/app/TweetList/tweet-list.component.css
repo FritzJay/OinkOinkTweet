@@ -3,7 +3,6 @@ div.tweets{
 display:table;
 padding:10%;
 margin:0 auto;
-max-width: 300px;
 font-family:"Brush Script MT", cursive;
 font-size:1.25em;
 letter-spacing:0.2px;
@@ -14,6 +13,7 @@ color:#33220D;
 }
 
 h1{
+max-width: 300px;
 font-size:2.65em;
 text-align:center;
 margin-bottom:10px;
@@ -24,6 +24,7 @@ text-transform:capitalize;
 }
 
 ul{
+max-width:300px;
 list-style:none;
 align-items:center;
 padding:0;
