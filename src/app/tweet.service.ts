@@ -29,11 +29,11 @@ export class TweetService {
   }
 
   extractNames(res: Response) {
-    console.log('From extractNames-- Results:')
-    console.log(res)
+    console.log('From extractNames-- Results:');
+    console.log(res);
     let names = [];
     for (let name of res.json()) {
-      console.log('From extractNames--Name: ' + name)
+      console.log('From extractNames--Name: ' + name);
       names.push(name);
     }
     return names;
@@ -63,7 +63,7 @@ export class TweetService {
   }
 
   handleError(err: Response | any) {
-    console.log('Error in handleError()--')
+    console.log('Error in handleError()--');
     console.log(err);
     return Observable.throw(err);
   }
