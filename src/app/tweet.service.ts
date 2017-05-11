@@ -32,7 +32,7 @@ export class TweetService {
     console.log('From extractNames-- Results:')
     console.log(res)
     let names = [];
-    for (let name of res.json().body) {
+    for (let name of res.json()._body) {
       console.log('From extractNames--Name: ' + name.initcap)
       names.push(name.initcap);
     }
