@@ -2,6 +2,7 @@
 div.tweets{
 display:table;
 padding:10%;
+padding-top:15%;
 font-family:"Brush Script MT", cursive;
 font-size:1.25em;
 letter-spacing:0.2px;
@@ -13,12 +14,10 @@ color:#33220D;
 
 h1{
 font-size:2.65em;
-text-align:center;
+text-align:left;
 margin-bottom:10px;
-}
-
-h1:first-letter{
 text-transform:capitalize;
+font-weight: lighter;
 }
 
 ul{
@@ -37,7 +36,6 @@ text-indent:10%;
 }
 
 li::first-letter{
-color:#17355d;
 font-size:2.25em;
 text-transform:capitalize;
 }
