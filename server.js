@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const twitterApi = require('./lib/twitter')
-const dbApi = require('./lib/db')
+const dbApi = require('./lib/database')
 
 var path = require('path')
 
