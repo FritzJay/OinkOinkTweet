@@ -8,4 +8,12 @@ padding-left:0;
 list-style:none;
 text-align:center;
 line-height:1.5em;
+overflow-x:scroll;
+}
+
+@media all and (max-width: 600px){
+  li{
+    display:inline;
+    margin: 5% 0;
+  }
 }
