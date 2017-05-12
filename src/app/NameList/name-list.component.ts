@@ -23,7 +23,7 @@ import { Tweet } from '../Tweet';
       state('void', style({
         transform: 'translateX(100%)'
       })),
-      transition('* <=> void', animate('100ms ease'))
+      transition('void => *', animate('100ms ease'))
     ])
   ]
 })

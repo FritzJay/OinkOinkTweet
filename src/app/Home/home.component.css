@@ -48,7 +48,11 @@ color:#0084b4;
 }
 
 .search.active{
+padding-top:15px;
 background-color:white;
+-webkit-box-shadow:0 3px 5px #888888;
+-moz-box-shadow:0 3px 5px #888888;
+box-shadow:0 3px 5px #888888;
 }
 
 .search button{
