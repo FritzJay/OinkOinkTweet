@@ -2,8 +2,12 @@
   <img src="../assets/images/Logo@x1.png" alt="A flying pig" />
   <div class="search" [class.active]="names !== undefined">
     <button [ngClass]="{ active: isDBLoading }" (click)="onSearchClick()">
-      <div [class.history-icon]="!isDBLoading"></div>
-      <div [class.loading-icon]="isDBLoading"></div>
+      <div class="history-icon" [class.active]="names !== undefined">
+        <img src="../../assets/images/history-icon.png" alt="history" />
+      </div>
+      <div class="loading-icon" [class.active]="isDBLoading">
+        <img class="loading-icon" src="../../assets/images/loading.gif" alt="loading" />
+      </div>
     </button>
     <name-list [names]="names"></name-list>
   </div>
