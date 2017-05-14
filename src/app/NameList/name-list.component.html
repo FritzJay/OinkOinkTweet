@@ -6,6 +6,7 @@
     <div class="loading-icon" [class.active]="isDBLoading">
       <img src="../../assets/images/loading.gif" alt="loading" />
     </div>
+    <h3 [class.active]="names !== undefined">Past Searches:</h3>
   </button>
   <div class="name-list" [@flyInOut]="names.length > 0" *ngIf="names">
     <ul class="names">
