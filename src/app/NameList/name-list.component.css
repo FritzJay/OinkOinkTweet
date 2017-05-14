@@ -8,7 +8,7 @@ padding-left:0;
 list-style:none;
 text-align:center;
 line-height:1.5em;
-overflow-x:auto;
+overflow: none;
 }
 
 ul::-webkit-scrollbar-track
@@ -36,7 +36,15 @@ ul::-webkit-scrollbar-thumb
 }
 
 @media all and (max-width: 600px){
-  li{
-    display:inline;
+  ul{
+  display: block;
+  white-space:nowrap;
+  overflow: auto;
   }
+
+  li{
+    display:inline-block;
+    width: 15%;
+  }
+
 }

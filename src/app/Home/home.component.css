@@ -24,7 +24,7 @@ margin-top: -6%;
 }
 
 .history-icon.active:after{
-display: inline;
+display: block;
 content:"Searches:";
 color:#0084b4;
 font-size:1.5em;
@@ -38,17 +38,20 @@ display:none;
 position:absolute;
 display:flex;
 flex-flow:column;
-align-items:center;
+align-items:space-between;
 top:5%;
 right:5%;
-width:15%;
-overflow:hidden;
+width:20%;
+overflow-x: hidden;
+overflow-y: auto;
+max-height: 25%;
 border-radius:10px;
 color:#0084b4;
+padding: 15px;
 }
 
 .search.active{
-padding-top:15px;
+padding-top:10px;
 background-color:white;
 -webkit-box-shadow:0 3px 5px #888888;
 -moz-box-shadow:0 3px 5px #888888;
@@ -62,6 +65,11 @@ border-radius:10px;
 color:white;
 width: 100%;
 z-index:0;
+margin-bottom: 10px;
+}
+
+.search.active button{
+  background-color: black;
 }
 
 .search button:hover{

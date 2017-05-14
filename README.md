@@ -2,4 +2,4 @@
 An app that translates your favorite tweets into pig Latin
 
 TODO:
-Set server.js up so it pings the correct database in development mode.
+Move everything to do with the search button to name-list component
