@@ -14,11 +14,7 @@ export class HomeComponent {
   twitterHandle: string;
   displayHandle: string;
   tweets: Tweet[];
-  names: string[];
-  namesStore: string[];
-  nextNamesLoad: number;
   isTwitterLoading: boolean;
-  isDBLoading: boolean;
 
   constructor(
     @Inject(DOCUMENT) private document: any,
@@ -26,7 +22,6 @@ export class HomeComponent {
     private pageScrollService: PageScrollService) { }
 
   ngOnInit(): void {
-    this.nextNamesLoad = Date.now();
     this.isTwitterLoading = false;
   }
 
@@ -50,40 +45,6 @@ export class HomeComponent {
           console.log(<any>error)
         }
       );
-  }
-
-  onSearchClick(): void {
-    if (this.names === undefined) {
-      // If it hasn't been 5 seconds since last db query
-      if (this.nextNamesLoad > Date.now()) {
-        // Use the in memory store of names
-        this.names = this.namesStore;
-        return;
-      }
-      // Temporary names for testng
-      this.names=['testing', 'temp name', 'juila childs'];
-      // Set button to .loading
-      this.isDBLoading = true;
-      // Set timestamp for next available db query to 5 seconds from last query
-      this.nextNamesLoad = Date.now() + 5000
-      // Get tweets from tweet service
-      this.tweetService.getNames()
-      .subscribe(
-        (names) => {
-          this.names = names;
-          this.isDBLoading = false;
-        },
-        (error) => {
-          this.isDBLoading = false;
-          console.log('Error: in home.component.ts, onSearchClick():')
-          console.log(<any>error);
-        }
-      );
-    } else {
-      this.namesStore = this.names;
-      this.names = undefined;
-      this.isDBLoading = false;
-    }
   }
 
   scrollToId(id: string): void {
