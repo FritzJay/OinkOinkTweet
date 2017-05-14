@@ -6,10 +6,14 @@ import { environment } from '../environments/environment';
 
 @Injectable()
 export class TweetService {
-  private twitterUrl = process.env.twitterUrl;
-  private databaseUrl = process.env.databaseUrl;
+  private twitterUrl = environment.twitterUrl;
+  private databaseUrl = environment.databaseUrl;
 
-  constructor(private http: Http) {}
+  constructor(private http: Http) {
+    console.log('Urls: ');
+    console.log(this.twitterUrl);
+    console.log(this.databaseUrl);
+  }
 
   getNames(): Observable<string[]> {
     // Create Headers
@@ -40,6 +44,7 @@ export class TweetService {
   }
 
   getTweets(twitterHandle: string): Observable<Tweet[]> {
+    let url = this.twitterUrl + twitterHandle
     // Create Headers
     let headers = new Headers({
       'Content-Type': 'text/plain'
@@ -47,11 +52,11 @@ export class TweetService {
     // Create request options
     let options = new RequestOptions({
       method: RequestMethod.Get,
-      url: this.twitterUrl,
+      url: url,
       headers: headers
     })
     // Send request and return results
-    return this.http.get(this.twitterUrl)
+    return this.http.get(url)
       .map(this.extractTweets)
       .catch(this.handleError);
   }

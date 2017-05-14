@@ -79,7 +79,7 @@ app.get('/db/', function (req, res) {
 })
 
 app.get('/*', function (req, res) {
-  res.sendFile(path.join(__dirname, '/dist/index.html'))
+  res.redirect(path.join(__dirname, '/dist/index.html'))
 })
 
 const port = (env === 'production') ? process.env.PORT || 3000 : 3000

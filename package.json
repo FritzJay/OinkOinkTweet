@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
-    "start-dev": "concurrently --kill-others \"ng serve --environment=dev\" \"nodemon server.js\"",
+    "start-dev": "concurrently --kill-others \"ng serve\" \"nodemon server.js\"",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -34,13 +34,13 @@
     "pg": "^6.1.5",
     "request": "^2.81.0",
     "rxjs": "^5.1.0",
+    "dotenv": "^4.0.0",
     "zone.js": "^0.8.4"
   },
   "devDependencies": {
     "@types/jasmine": "2.5.38",
     "codelyzer": "~2.0.0",
     "concurrently": "^3.4.0",
-    "dotenv": "^4.0.0",
     "jasmine-core": "~2.5.2",
     "jasmine-spec-reporter": "~3.2.0",
     "karma": "~1.4.1",
