@@ -2,16 +2,16 @@ import { Injectable, OnInit } from '@angular/core';
 import { Http, Response, Headers, RequestOptions, RequestMethod } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import { Tweet } from './Tweet';
-import { environment } from '../environments/environment.prod';
+import { environment } from '../environments/environment';
 
 @Injectable()
 export class TweetService {
-  private urls = environment.urls;
+  private twitterUrl = process.env.twitterUrl;
+  private databaseUrl = process.env.databaseUrl;
 
   constructor(private http: Http) {}
 
   getNames(): Observable<string[]> {
-    let url = this.urls['database'];
     // Create Headers
     let headers = new Headers({
       'Content-Type': 'text/plain'
@@ -19,11 +19,11 @@ export class TweetService {
     // Create request options
     let options = new RequestOptions({
       method: RequestMethod.Get,
-      url: url,
+      url: this.databaseUrl,
       headers: headers
     })
     // Send request and return results
-    return this.http.get(url)
+    return this.http.get(this.databaseUrl)
       .map(this.extractNames)
       .catch(this.handleError);
   }
@@ -40,8 +40,6 @@ export class TweetService {
   }
 
   getTweets(twitterHandle: string): Observable<Tweet[]> {
-    // Create url needed to query our server
-    let url = this.urls.twitter + twitterHandle;
     // Create Headers
     let headers = new Headers({
       'Content-Type': 'text/plain'
@@ -49,11 +47,11 @@ export class TweetService {
     // Create request options
     let options = new RequestOptions({
       method: RequestMethod.Get,
-      url: url,
+      url: this.twitterUrl,
       headers: headers
     })
     // Send request and return results
-    return this.http.get(url)
+    return this.http.get(this.twitterUrl)
       .map(this.extractTweets)
       .catch(this.handleError);
   }
