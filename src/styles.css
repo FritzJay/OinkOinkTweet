@@ -29,11 +29,3 @@ display: none;
 .loading-icon.active{
 display:block;
 }
-
-.loading-icon.active img{
-  display:inline;
-  float: right;
-  max-width: 10%;
-  max-height: 10%;
-  margin-top: -6%;
-}
