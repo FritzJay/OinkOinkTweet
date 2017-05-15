@@ -50,8 +50,6 @@ export class NameListComponent {
         this.names = this.namesStore;
         return;
       }
-      // Temporary names for testng
-      this.names=['testing', 'temp name', 'juila childs'];
       // Set button to .loading
       this.isDBLoading = true;
       // Set timestamp for next available db query to 5 seconds from last query

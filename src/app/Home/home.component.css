@@ -87,6 +87,16 @@ align-content:center;
 padding:0 10%;
 }
 
+.loading-icon.active {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.loading-icon.active img {
+  vertical-align: middle;
+}
+
 @media all and (max-width: 600px){
 
   .home{
