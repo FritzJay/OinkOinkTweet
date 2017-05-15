@@ -7,8 +7,8 @@ import { HttpModule } from '@angular/http';
 import { HomeComponent } from './Home/home.component';
 import { TweetListComponent } from './TweetList/tweet-list.component';
 import { NameListComponent } from './NameList/name-list.component'
-import { TweetService } from './tweet.service';
-
+import { TweetService } from './TweetList/tweet.service';
+import { NameService } from './NameList/name.service'
 import { Ng2PageScrollModule  } from 'ng2-page-scroll';
 
 
@@ -26,7 +26,8 @@ import { Ng2PageScrollModule  } from 'ng2-page-scroll';
     Ng2PageScrollModule.forRoot()
   ],
   providers: [
-    TweetService
+    TweetService,
+    NameService
   ],
   bootstrap: [HomeComponent]
 })

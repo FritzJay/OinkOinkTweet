@@ -1,19 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions, RequestMethod } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
-import { Tweet } from './Tweet';
-import { environment } from '../environments/environment';
+import { environment } from '../../environments/environment';
 
 @Injectable()
-export class TweetService {
-  private twitterUrl = environment.twitterUrl;
+export class NameService {
+  private databaseUrl = environment.databaseUrl;
 
   constructor(private http: Http) {
-    console.log(this.twitterUrl);
+    console.log(this.databaseUrl);
   }
 
-  getTweets(twitterHandle: string): Observable<Tweet[]> {
-    let url = this.twitterUrl + twitterHandle
+  getNames(): Observable<string[]> {
     // Create Headers
     let headers = new Headers({
       'Content-Type': 'text/plain'
@@ -21,17 +19,24 @@ export class TweetService {
     // Create request options
     let options = new RequestOptions({
       method: RequestMethod.Get,
-      url: url,
+      url: this.databaseUrl,
       headers: headers
     })
     // Send request and return results
-    return this.http.get(url)
-      .map(this.extractTweets)
+    return this.http.get(this.databaseUrl)
+      .map(this.extractNames)
       .catch(this.handleError);
   }
 
-  extractTweets(res: Response) {
-    return res.json() ? res.json() as Tweet[] : {};
+  extractNames(res: Response) {
+    console.log('From extractNames-- Results:');
+    console.log(res);
+    let names = [];
+    for (let name of res.json()) {
+      console.log('From extractNames--Name: ' + name);
+      names.push(name);
+    }
+    return names;
   }
 
   handleError(err: Response | any) {

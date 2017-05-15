@@ -7,7 +7,7 @@ import {
   PageScrollService,
   PageScrollInstance,
   EasingLogic } from 'ng2-page-scroll';
-import { TweetService } from '../tweet.service';
+import { TweetService } from './tweet.service';
 import { Tweet } from '../Tweet';
 import {
   trigger,

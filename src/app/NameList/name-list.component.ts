@@ -10,7 +10,7 @@ import {
   animate,
   transition
 } from '@angular/animations';
-import { TweetService } from '../tweet.service';
+import { NameService } from './name.service';
 import { Tweet } from '../Tweet';
 
 @Component({
@@ -36,7 +36,7 @@ export class NameListComponent {
   nextNamesLoad: number;
   isDBLoading: boolean;
 
-  constructor(private tweetService: TweetService) {}
+  constructor(private nameService: NameService) {}
 
   ngOnInit() {
     this.nextNamesLoad = Date.now();
@@ -55,7 +55,7 @@ export class NameListComponent {
       // Set timestamp for next available db query to 5 seconds from last query
       this.nextNamesLoad = Date.now() + 5000
       // Get tweets from tweet service
-      this.tweetService.getNames()
+      this.nameService.getNames()
       .subscribe(
         (names) => {
           this.names = names;

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions, RequestMethod } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
-import { Tweet } from './Tweet';
-import { environment } from '../environments/environment';
+import { Tweet } from '../Tweet';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class TweetService {
