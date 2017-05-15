@@ -1,8 +1,23 @@
-<div class="tweets" [@flyInOut]="twitterHandle">
-  <ul class="tweets">
-    <li *ngFor="let tweet of tweets">
-      {{tweet.text}}
-    </li>
-  </ul>
-  <h1>-{{twitterHandle}}</h1>
+
+<div class="form">
+  <input type="text" [(ngModel)]="twitterHandle" name="twitterHandle" placeholder="Enter Twitter Handle" />
+  <img src="../assets/images/Transfer @1x.png" alt="Transfer" />
+    <button [ngClass]="{ active: isTwitterLoading }" (click)="onTranslateClick()">
+      Translate
+      <div class="loading-icon" [class.active]="isTwitterLoading">
+        <img src="../../assets/images/loading.gif" alt="loading" />
+      </div>
+    </button>
+</div>
+<div id="tweetlist"> <!-- Put tweet-list inside a div so ng2-page-scroll will have a target -->
+  <div *ngIf="tweets">
+  <div class="tweets" [@flyInOut]="twitterHandle">
+    <ul class="tweets">
+      <li *ngFor="let tweet of tweets">
+        {{tweet.text}}
+      </li>
+    </ul>
+    <h1>-{{twitterHandle}}</h1>
+  </div>
+  </div>
 </div>

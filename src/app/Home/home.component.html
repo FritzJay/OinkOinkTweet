@@ -10,16 +10,4 @@
     eThay orldway ependsday onyay ityay.
   </p>
 </div>
-<div class="form">
-  <input type="text" [(ngModel)]="twitterHandle" name="twitterHandle" placeholder="Enter Twitter Handle" />
-  <img src="../assets/images/Transfer @1x.png" alt="Transfer" />
-    <button [ngClass]="{ active: isTwitterLoading }" (click)="onTranslateClick()">
-      Translate
-      <div class="loading-icon" [class.active]="isTwitterLoading">
-        <img src="../../assets/images/loading.gif" alt="loading" />
-      </div>
-    </button>
-</div>
-<div id="tweetlist"> <!-- Put tweet-list inside a div so ng2-page-scroll will have a target -->
-  <tweet-list [tweets]="tweets" [twitterHandle]="displayHandle" *ngIf="tweets"></tweet-list>
-</div>
+<tweet-list></tweet-list>
