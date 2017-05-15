@@ -88,13 +88,13 @@ padding:0 10%;
 }
 
 .loading-icon.active {
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle;
+  top: 30px;
 }
 
-.loading-icon.active img {
-  vertical-align: middle;
+.loading-icon img {
+  float: none;
+  max-width: 20%;
+  max-height: 20%;
 }
 
 @media all and (max-width: 600px){
@@ -124,5 +124,9 @@ padding:0 10%;
   .form img{
   margin-top:7%;
   margin-bottom:7%;
+  }
+
+  .loading-icon.active {
+    top: 10px;
   }
 }
