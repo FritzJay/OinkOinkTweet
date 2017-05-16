@@ -125,11 +125,15 @@ text-transform:capitalize;
 }
 
 @media all and (max-width: 600px){
+  #tweetlist{
+    padding: 10% 0;
+  }
+
   div.tweets{
-  padding:10%;
   padding-top:35%;
   padding-bottom:35%;
   background-repeat:no-repeat;
+  background-position: center;
   background-size:cover;
   }
 
@@ -144,6 +148,7 @@ text-transform:capitalize;
 
   .form button{
   margin:0;
+  padding: 0;
   }
 
   .form img{
@@ -153,5 +158,17 @@ text-transform:capitalize;
 
   .loading-icon.active {
     top: 10px;
+  }
+}
+
+@media all and (max-width: 450px){
+  div.tweets{
+    padding: 50% 0;
+  }
+}
+
+@media all and (max-width: 350px){
+  div.tweets{
+    padding: 75% 0;
   }
 }
