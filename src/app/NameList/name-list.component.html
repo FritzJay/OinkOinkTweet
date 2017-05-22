@@ -1,5 +1,5 @@
 <div class="search" [class.active]="names !== undefined">
-  <button [ngClass]="{ active: isDBLoading }" (click)="onSearchClick()">
+  <button id="names-list-button" [ngClass]="{ active: isDBLoading }" (click)="onSearchClick()">
     <div class="history-icon" [class.active]="names !== undefined">
       <img src="../../assets/images/history-icon.png" alt="history" />
     </div>
