@@ -59,7 +59,7 @@ app.get('/twitter/:twitterHandle', function (req, res) {
   if (req.params.twitterHandle) {
     // If the twitterHandle contains invalid characters, send back an error
     regexp = new RegExp(/^@?(\w){1,15}$/)
-    if (!regexp.test(req.params.twitterHandle)) {
+    if (!regexp.exec(req.params.twitterHandle)) {
       var twitterHandle = req.params.twitterHandle.replace(/ /g, '_')
     } else {
       callback('That is an invalid twitter handle. Please try again.')
