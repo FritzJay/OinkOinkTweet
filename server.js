@@ -61,12 +61,12 @@ app.get('/twitter/:twitterHandle', function (req, res) {
     regexp = new RegExp(/^@?(\w){1,15}$/)
     if (regexp.exec(req.params.twitterHandle)) {
       var twitterHandle = req.params.twitterHandle.replace(/ /g, '_')
+      // Get last 3 tweets from twitterHandle
+      twitterApi.queryTwitter(twitterHandle, callback)
     } else {
       console.log('That is an invalid twitter handle.')
       res.send({})
     }
-    // Get last 3 tweets from twitterHandle
-    twitterApi.queryTwitter(twitterHandle, callback)
   } else {
     console.log('no handle')
     res.send({})
