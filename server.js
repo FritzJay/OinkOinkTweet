@@ -62,7 +62,8 @@ app.get('/twitter/:twitterHandle', function (req, res) {
     if (regexp.exec(req.params.twitterHandle)) {
       var twitterHandle = req.params.twitterHandle.replace(/ /g, '_')
     } else {
-      callback('That is an invalid twitter handle. Please try again.')
+      console.log('That is an invalid twitter handle.')
+      return
     }
     // Get last 3 tweets from twitterHandle
     twitterApi.queryTwitter(twitterHandle, callback)
