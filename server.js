@@ -47,7 +47,6 @@ app.get('/twitter/:twitterHandle', function (req, res) {
         }
       })
     }
-
     // Send results
     if (data) {
       res.send(data)
@@ -60,6 +59,7 @@ app.get('/twitter/:twitterHandle', function (req, res) {
     // If the twitterHandle contains invalid characters, send back an error
     regexp = new RegExp(/^@?(\w){1,15}$/)
     if (regexp.exec(req.params.twitterHandle)) {
+      console.log("regexp.exec: " + regexp.exec(req.params.twitterHandle))
       var twitterHandle = req.params.twitterHandle.replace(/ /g, '_')
       // Get last 3 tweets from twitterHandle
       twitterApi.queryTwitter(twitterHandle, callback)
